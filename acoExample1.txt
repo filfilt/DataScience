@@ -1,0 +1,72 @@
+PART8: do it by anaconda and visual studio code usingg python
+SecondExcersise
+# Import Sqlite
+========//========
+# import package
+   import sqlite3
+
+#connect to database
+ connection=sqlite3.connect("SMS.db")
+  connection.close()
+
+
+#Create table
+#open connection
+connection=sqlite3.connect("SMS.db")
+cursor=connection.cursor()
+create_table = """
+	Create table Student(
+	StudentId Integer primary key,
+	name varchar(50),
+	gender char(1),
+	DepartmentId int);	
+		"""
+#Execute Query
+cursor.execute(create_table)
+#commit change()
+ connection.commit()
+#close connection
+ connection.close()
+
+============//================
+
+#create sample data as tuple
+student_data=[(1,'nega','M',1),
+              (2,'wagnew','M',1),
+              (3,'Almaz','F',1),
+              (4,'Takele','M',1),
+              (5,'Abebe','M',1)]
+# open connection
+connection=sqlite3.connect("SMS.db")
+# open cursor
+cursor=connection.cursor()
+for student in student_data:
+     #formated query string insert
+     insert_statment = """Insert into Student
+     (StudentId,name,gender,DepartmentId)
+     values({0},"{1}","{2}",{3}); """.format(student[0],student[1],
+                                             student[2],student[3])
+     # Execute the query
+     cursor.execute(insert_statment)
+#commit changes
+connection.commit()
+#close connection
+connection.close()
+
+===============//===============
+# open connection
+connection=sqlite3.connect("SMS.db")
+# open cursor
+cursor=connection.cursor()
+#query
+query="select * from student"
+cursor.execute(query)
+result=cursor.fetchall()
+#print result
+for row in result:
+    print(row)
+connection.close() 
+
+==================//===============
+!conda install -y -q pymysql
+

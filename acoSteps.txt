@@ -1,0 +1,17 @@
+dataSience
+1. ShortCut:
+=>shift-Enter====>New cell
+=>Cntr-Enter=====>run
+=>Escp-M========>makdow
+=>Escp-L========>Line
+=>Escp-f=======>find
+=>Escp-a=======New cell
+
+2.Majick function:
+=>!  => to use command line
+=>% and %%
+
+%matplotlib inline
+
+import matplotlib.pyplot as plt
+plt.plot(range(10))

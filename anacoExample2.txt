@@ -1,0 +1,17 @@
+#mySQL
+!conda install -y -q pymysql
+import pymysql
+
+#SQL server
+!conda install -y -q pymssql
+import pymssql
+
+#Create connection string
+conn = pymssql.connect(server = "DESKTOP-JJ0D0FA\SQLEXPRESS", database ="SchoolManagmentSystem")
+
+cursor=conn.cursor()
+Query= "select *from Student"
+cursor.execute(query)
+result=cursor.fetchall()
+for row in result:
+    print(row)

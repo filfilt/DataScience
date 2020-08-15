@@ -1,0 +1,87 @@
+print("Hello Nega")
+
+x= 12
+y=12
+print(x+y)
+
+
+fname ='nega'
+lname = 'tafere'
+
+print(fname + lname)
+
+# The following is about the student¶
+
+def getsum(num1,num2):
+    return num1+num2
+
+num1 = 12
+num2 =15
+sum = getsum(num1, num2)
+print(sum)
+
+# Multiplication
+
+def getProd(num1,num2):
+    return num1*num2
+
+prod = getProd(12,10)
+print(prod)
+
+# Magic Function %
+
+%matplotlib inline
+
+import matplotlib.pyplot as plt
+plt.plot(range(10))
+
+# Magic Function %%
+
+%%writefile nega.txt
+This is for nega tafere mekonnen
+This is for the first file
+This is the first test file
+
+%%HTML
+<h1>nega's page</h1>
+<ul>
+<li>nega</li>
+<li>Abera</li>
+<li>Ashenafi</li>
+<li>Munir</li>
+<li>Abebe</li>
+</ul>
+
+# dir or ls
+ %ls
+
+# Video Embed
+go to video and open
+go to share
+go to Embed
+copy the link
+paste it at anacoda page cell then run it
+
+# install SQL: to use sqlite
+! pip ipython-sql
+      or
+ %%!
+pip install --trusted-host pypi.org ipython-sql
+
+%load_ext sql
+
+%sql sqlite://
+
+ # Create Table
+%%sql
+Create table Faculty (Id, FacultyName);
+insert into Faculty values (1,'Natural Sience');
+insert into Faculty values (2,'Social Sience');
+insert into Faculty values (3,'Education');
+insert into Faculty values (4,'Medicine');
+
+#Select
+%sql select * from Faculty
+
+
+
